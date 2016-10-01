@@ -10,12 +10,16 @@
 	NarrowItDownController.$inject = ['MenuSearchService'];
 	function NarrowItDownController (MenuSearchService) {
 		var vm = this;
-		
+		vm.found = null;
+
 		vm.findMatchItems = function (searchTerm) {
-			MenuSearchService.getMatchedMenuItems(searchTerm);
-			vm.found = MenuSearchService.foundItems;
-			// clear an input field
-			vm.serchTerm = '';
+			if (searchTerm !== undefined && searchTerm !== '') {
+				MenuSearchService.getMatchedMenuItems(searchTerm);
+				vm.found = MenuSearchService.foundItems;
+				vm.serchTerm = '';
+			} else {
+				vm.found = [];
+			}
 		}
 
 		vm.removeFoundItem = function (index) {
