@@ -39,7 +39,7 @@
 						.then(function (result) {
 							var foundItems = [];
 							angular.forEach(result.data.menu_items, function (val, idx) {
-								if (val.description.indexOf(searchTerm) > -1) {
+								if (val.description.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
 									foundItems.push(val);
 								}
 							});
