@@ -6,7 +6,8 @@
       <li ng-repeat="item in foundDirectiveCtrl.foundItems" class="list-group-item">
     		<div class="row">
     		  <div class="col-xs-9">
-            {{ item.name }}<span class="badge">{{item.short_name}}</span> - {{item.description}}
+            <h4>{{ item.name }} <span class="badge">{{ item.short_name }}</span></h4>
+             <p class="list-group-item-text">{{ item.description }}</p>
           </div>
     		  <div class="col-xs-3">
             <button class="btn btn-danger btn-block" ng-click="foundDirectiveCtrl.onRemove({index: $index});">Don't want this one!</button>
