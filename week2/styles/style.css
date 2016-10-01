@@ -3,12 +3,12 @@
 	color: red;
 	font-size: 1.2em;
 }
-li {
+.list-items {
 	margin-bottom: 7px;
 	font-size: 1.2em;
 	text-transform: capitalize;
 }
-li > button {
+.list-items > button {
 	margin-left: 6px;
 }
 button > span {
