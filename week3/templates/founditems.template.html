@@ -5,10 +5,10 @@
     <ul class="list-group">
       <li ng-repeat="item in foundDirectiveCtrl.foundItems" class="list-group-item">
     		<div class="row">
-    		  <div class="col-xs-6">
-            {{ item.name }}
+    		  <div class="col-xs-9">
+            {{ item.name }} - {{item.short_name}} - {{item-description}}
           </div>
-    		  <div class="col-xs-6">
+    		  <div class="col-xs-3">
             <button class="btn btn-danger btn-block" ng-click="foundDirectiveCtrl.onRemove({index: $index});">Don't want this one!</button>
           </div>
     		</div>
