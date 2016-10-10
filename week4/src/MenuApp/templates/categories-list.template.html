@@ -1,0 +1,22 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="home">Home</a></li>
+	<li><a ui-sref="home.categories"
+				 ng-click="$ctrl.getName({shortName: category.short_name})">Categories</a></li>
+  <li class="active">{{$ctrl.shortName}}</li>
+</ol>
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-group">
+			<li ng-repeat="category in $ctrl.categories" class="list-group-item"
+					ui-sref=".items({categoryName: category.short_name})"
+					ui-sref-active="active" ng-click="$ctrl.getName({shortName: category.short_name})">
+				<h4 class="list-group-item-heading">
+					{{category.name}} <span class="badge pull-right">{{ category.short_name }}</span>
+				</h4>
+	    </li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <ui-view></ui-view>
+  </div>
+</div>
